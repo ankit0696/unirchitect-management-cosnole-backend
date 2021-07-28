@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "name": "transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "income",
+        "expense"
+      ]
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "client": {
+      "model": "clients",
+      "via": "transactions"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "text"
+    },
+    "amount": {
+      "type": "integer"
+    }
+  }
+}
